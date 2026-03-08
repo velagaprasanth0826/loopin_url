@@ -1,0 +1,323 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  background: rgba(28, 27, 27, 0.20);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0;
+}
+
+.mobile-container {
+  width: 100%;
+  max-width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0;
+  background: rgba(28, 27, 27, 0.20);
+  min-height: 100vh;
+}
+
+.event-content {
+  width: 390px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  isolation: isolate;
+  overflow: visible;
+}
+
+.image-container {
+  position: relative;
+  width: 390px;
+  height: 404px;
+}
+
+.image-skeleton {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0.1) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+  z-index: 5;
+  border-radius: 0;
+}
+
+.image-skeleton.loaded {
+  display: none;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.event-image {
+  width: 390px;
+  height: 404px;
+  object-fit: cover;
+  border-radius: 0;
+  position: relative;
+  z-index: 1;
+  display: block;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.category-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(28, 27, 27, 0.85);
+  backdrop-filter: blur(10px);
+  padding: 8px 14px;
+  border-radius: 20px;
+  z-index: 10;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.category-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.category-name {
+  font-family: 'Clash Display Regular', sans-serif;
+  font-size: 14px;
+  color: #ffffff;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.blur-container {
+  width: 390px;
+  min-height: auto;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  -moz-backdrop-filter: blur(18px);
+  -ms-backdrop-filter: blur(18px);
+  border-radius: 22px 22px 0 0;
+  padding: 24px 20px;
+  margin: -50px 32px 32px 32px;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  isolation: isolate;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Fallback for browsers that don't support backdrop-filter */
+.no-backdrop-filter .blur-container {
+  background: rgba(28, 27, 27, 0.85);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.event-title {
+  font-family: 'Clash Display', sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.event-details {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.detail-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.detail-text {
+  font-family: 'Clash Display Regular', sans-serif;
+  font-size: 16px;
+  color: #ffffff;
+  font-weight: 400;
+}
+
+.join-button {
+  width: 326px;
+  height: 60px;
+  background: #9355F0;
+  border: none;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Clash Display Regular', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+.join-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(147, 85, 240, 0.4);
+}
+
+.join-button:active {
+  transform: translateY(0);
+}
+
+.join-button span {
+  font-family: 'Clash Display Regular', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+.arrow-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.hosted-by {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+}
+
+.host-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.image-skeleton-small {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(90deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0.1) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+  z-index: 5;
+  left: 0;
+  top: 0;
+}
+
+.image-skeleton-small.loaded {
+  display: none;
+}
+
+.host-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.host-label {
+  font-family: 'Clash Display Regular', sans-serif;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 400;
+}
+
+.host-name {
+  font-family: 'Clash Display Regular', sans-serif;
+  font-size: 16px;
+  color: #ffffff;
+  font-weight: 400;
+}
+
+.about-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 8px;
+}
+
+.about-title {
+  font-family: 'Clash Display Regular', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #ffffff;
+  margin: 0;
+}
+
+.about-text {
+  font-family: 'Clash Display Regular', sans-serif;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 390px) {
+  .event-content {
+    width: 100vw;
+  }
+
+  .event-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 390 / 404;
+  }
+
+  .blur-container {
+    width: 100%;
+    padding: 20px 16px;
+  }
+
+  .join-button {
+    width: 100%;
+    max-width: 326px;
+  }
+}

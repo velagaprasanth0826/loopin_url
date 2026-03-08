@@ -1,0 +1,448 @@
+/* Event Detail Page Styles */
+
+:root {
+  --primary-color: #6366f1;
+  --secondary-color: #ec4899;
+  --neutral-50: #f9fafb;
+  --neutral-100: #f3f4f6;
+  --neutral-200: #e5e7eb;
+  --neutral-300: #d1d5db;
+  --neutral-600: #4b5563;
+  --neutral-900: #111827;
+}
+
+.event-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background: white;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  font-size: 1.1rem;
+  color: var(--neutral-600);
+}
+
+.error-page {
+  text-align: center;
+  padding: 60px 20px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--neutral-50);
+  border-radius: 8px;
+}
+
+.error-page h1 {
+  font-size: 2rem;
+  color: var(--neutral-900);
+  margin-bottom: 16px;
+}
+
+.error-page p {
+  font-size: 1rem;
+  color: var(--neutral-600);
+  margin-bottom: 8px;
+}
+
+.error-code {
+  font-size: 0.875rem;
+  color: var(--neutral-500);
+  margin-bottom: 24px;
+}
+
+/* Event Detail Layout */
+.event-detail {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+/* Event Header */
+.event-header {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--neutral-200);
+}
+
+.event-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.event-header-overlay {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 10;
+}
+
+.event-type {
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+/* Event Content */
+.event-content {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 40px;
+}
+
+/* Event Main */
+.event-main {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.event-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--neutral-900);
+  line-height: 1.2;
+  margin: 0;
+}
+
+/* Event Meta */
+.event-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1rem;
+  color: var(--neutral-700);
+}
+
+.meta-item .icon {
+  font-size: 1.25rem;
+}
+
+.meta-text {
+  flex-grow: 1;
+}
+
+/* Interests/Tags */
+.event-interests {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.interest-tag {
+  background: var(--primary-color);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Sections */
+.event-description,
+.event-venue,
+.event-host {
+  border-top: 1px solid var(--neutral-200);
+  padding-top: 24px;
+}
+
+.event-description h2,
+.event-venue h2,
+.event-host h2,
+.share-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--neutral-900);
+  margin: 0 0 16px 0;
+}
+
+.event-description p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--neutral-700);
+  margin: 0;
+}
+
+/* Venue Details */
+.venue-details {
+  background: var(--neutral-50);
+  padding: 16px;
+  border-radius: 8px;
+  border-left: 4px solid var(--primary-color);
+}
+
+.venue-name {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--neutral-900);
+  margin: 0 0 8px 0;
+}
+
+.venue-address,
+.venue-city {
+  font-size: 0.95rem;
+  color: var(--neutral-600);
+  margin: 4px 0;
+}
+
+/* Host Card */
+.host-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background: var(--neutral-50);
+  border-radius: 8px;
+}
+
+.host-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--neutral-200);
+}
+
+.host-info {
+  flex-grow: 1;
+}
+
+.host-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--neutral-900);
+  margin: 0;
+}
+
+.host-username {
+  font-size: 0.85rem;
+  color: var(--neutral-600);
+  margin: 4px 0 0 0;
+}
+
+/* Sidebar */
+.event-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: fit-content;
+  position: sticky;
+  top: 20px;
+}
+
+/* Share Card */
+.share-card {
+  background: var(--neutral-50);
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid var(--neutral-200);
+}
+
+.share-card h3 {
+  margin: 0 0 16px 0;
+}
+
+.share-url {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.share-input {
+  flex-grow: 1;
+  padding: 8px 12px;
+  border: 1px solid var(--neutral-300);
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-family: monospace;
+  background: white;
+  color: var(--neutral-900);
+}
+
+.copy-btn {
+  padding: 8px 16px;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.copy-btn:hover {
+  background: #4f46e5;
+}
+
+/* Share Buttons */
+.share-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+}
+
+.share-btn {
+  display: block;
+  padding: 10px 8px;
+  text-align: center;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: white;
+  transition: opacity 0.2s;
+}
+
+.share-btn:hover {
+  opacity: 0.9;
+}
+
+.share-btn.whatsapp {
+  background: #25d366;
+}
+
+.share-btn.facebook {
+  background: #1877f2;
+}
+
+.share-btn.twitter {
+  background: #000000;
+}
+
+/* Price Card */
+.price-card {
+  background: var(--primary-color);
+  color: white;
+  padding: 24px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.price-display {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.btn-primary {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  background: white;
+  color: var(--primary-color);
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-primary:hover {
+  background: var(--neutral-100);
+}
+
+.btn-register {
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .event-title {
+    font-size: 1.75rem;
+  }
+
+  .event-content {
+    grid-template-columns: 1fr;
+  }
+
+  .event-sidebar {
+    position: static;
+  }
+
+  .event-header {
+    height: 300px;
+  }
+
+  .meta-item {
+    font-size: 0.95rem;
+  }
+
+  .share-buttons {
+    grid-template-columns: 1fr;
+  }
+
+  .event-interests {
+    gap: 6px;
+  }
+
+  .interest-tag {
+    font-size: 0.8rem;
+    padding: 5px 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .event-container {
+    padding: 12px;
+  }
+
+  .event-detail {
+    gap: 20px;
+  }
+
+  .event-main {
+    gap: 20px;
+  }
+
+  .event-content {
+    gap: 20px;
+  }
+
+  .event-title {
+    font-size: 1.5rem;
+  }
+
+  .event-header {
+    height: 250px;
+  }
+
+  .event-description h2,
+  .event-venue h2,
+  .event-host h2,
+  .share-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .share-card {
+    padding: 16px;
+  }
+
+  .price-display {
+    font-size: 1.75rem;
+  }
+
+  .btn-primary {
+    padding: 12px 16px;
+  }
+}

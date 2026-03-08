@@ -1,0 +1,74 @@
+/* Not Found Page Styles */
+
+.not-found-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+}
+
+.not-found-content {
+  text-align: center;
+  background: white;
+  padding: 60px 40px;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+}
+
+.not-found-content h1 {
+  font-size: 5rem;
+  font-weight: 700;
+  margin: 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+
+.not-found-content h2 {
+  font-size: 1.5rem;
+  color: #111827;
+  margin: 16px 0 12px 0;
+  font-weight: 600;
+}
+
+.not-found-content p {
+  color: #6b7280;
+  margin: 12px 0 32px 0;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.btn-home {
+  display: inline-block;
+  padding: 12px 32px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-home:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 480px) {
+  .not-found-content {
+    padding: 40px 24px;
+  }
+
+  .not-found-content h1 {
+    font-size: 3.5rem;
+  }
+
+  .not-found-content h2 {
+    font-size: 1.25rem;
+  }
+}
