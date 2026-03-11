@@ -53,7 +53,7 @@ function EventPage() {
         const canonicalId = extractCanonicalId(eventSlug);
         console.log("Fetching:", canonicalId);
         
-        const url = `/api/events/public-share/${canonicalId}`;
+        const url = `${API_BASE_URL}/api/events/public-share/${canonicalId}`;
         
         const response = await fetch(url, {
           method: 'GET',
